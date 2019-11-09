@@ -1,5 +1,3 @@
-// Belly Button Biodiversity - Plotly.js
-
 function buildMetadata(sample) {
 
   // @TODO: Complete the Following Function that Builds the Metadata Panel
@@ -7,16 +5,16 @@ function buildMetadata(sample) {
   // Use `d3.json` to Fetch the Metadata for a Sample
     d3.json(`/metadata/${sample}`).then((data) => {
         // Use d3 to Select the Panel with id of `#sample-metadata`
-        var PANEL = d3.select("#sample-metadata");
+        var panel = d3.select("#sample-metadata");
         // Use `.html("") to Clear any Existing Metadata
-        PANEL.html("");
+        panel.html("");
         // Use `Object.entries` to Add Each Key & Value Pair to the Panel
         // Hint: Inside the Loop, Use d3 to Append New Tags for Each Key-Value in the Metadata
         Object.entries(data).forEach(([key, value]) => {
-          PANEL.append("h6").text(`${key}:${value}`);
+          panel.append("h6").text(`${key}:${value}`);
         })
         // BONUS: Build the Gauge Chart
-          buildGauge(data.WFREQ);
+          
     })
 }
 
