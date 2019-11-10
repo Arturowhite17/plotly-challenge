@@ -1,3 +1,4 @@
+
 function buildMetadata(sample) {
 
   // @TODO: Complete the Following Function that Builds the Metadata Panel
@@ -14,7 +15,7 @@ function buildMetadata(sample) {
           panel.append("h6").text(`${key}:${value}`);
         })
         // BONUS: Build the Gauge Chart
-          
+          buildGauge(data.WFREQ);
     })
 }
 
